@@ -1,6 +1,7 @@
 # Import libraries
-import json
 import streamlit as st
+import streamlit.components.v1 as components
+import requests
 import streamlit.components.v1 as components
 
 # Graphs
@@ -9,13 +10,18 @@ import plotly.graph_objects as go
 # Libraries for ChatGPT
 import os
 from openai import OpenAI
-import yaml
 
-# set page layout to wide
-try:
-    st.set_page_config(layout="wide")
-except:
-    st.beta_set_page_config(layout="wide")
+# set page title & layout
+st.set_page_config(page_title='Elina Vigand Portfolio' ,layout="wide",page_icon='👩‍💻')
+
+# -----------------  loading css  ----------------- #
+    
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
+        
+local_css("style/style.css")
+
 
 
 # Toast message
@@ -24,7 +30,7 @@ st.toast('Hi 👋 Welcome to my page')
 # Heading title & image
 st.title("ELINA VIGAND")
 st.header("Data Science | Marketing Analytics | Project Management")
-st.image("pictures/Banner-Elina-Vigand.png")
+st.image("pictures/Banner-Elina-Vigand.jpg")
 
 # About me block
 st.markdown(
@@ -39,9 +45,8 @@ st.markdown(
     * Machine Learning - scikit-learn, regression, anomaly detection, clustering, ensemble methods  
     * Deep Learning - Tensorflow, Keras, neural networks, CNNs, transfer learning, image segmentation, object detection  
     * Natural Language Processing - text classification, summarization, clustering and similarity, machine translation, sentiment analysis, search and information retrieval, parsing and named entity recognition, classical NLP and transformers  
-- 👯 I’m looking to collaborate on interesting Data projects.  
-- 💬 Ask me about Customer Segmentation and Marketing Strategies.  
-- 📫 You can reach me on LinkedIn.  
+- 👯 I’m looking to collaborate on interesting Data projects.   
+- 📫 You can reach me on [LinkedIn](https://www.linkedin.com/in/elinavigand/).  
 - ⚡ Fun fact: I learn German by reading and listening to Harry Potter books.  
     """
     )
@@ -111,6 +116,58 @@ with col2:
           )
 
 
+# Projects
+st.markdown("""
+##            
+## Projects 
+""")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.image('pictures/project_nestle.jpg')
+    st.markdown("""
+        #### Unveiling Customer Thoughts  
+        **Objective:**  Automate customer review analysis for Nestlé's product, generating deeper insights.  
+        
+        **Key Deliverables:**  
+        - Data pipeline for efficient review collection and analysis.  
+        - NLP-powered insights: sentiment, pro/con identification, topic modeling.  
+        - Interactive Streamlit app for exploring trends, topics, and asking questions of a ChatGPT-powered assistant.
+        """)
+    st.markdown('##')
+    st.image('pictures/project_bankA.jpg')
+    st.markdown("""
+        #### Customer Segmentation for Bank A  
+        **Objective:**  Identify optimal customer segments based on purchasing behaviors for targeted marketing campaigns.
+        
+        **Key Deliverables:**  
+        - Cluster analysis revealing three distinct customer segments: "Yuppies," "Conservatives," and "Core Base."  
+        - Strategic recommendations for each segment, including credit limit adjustments, cross-selling, and personalized marketing.
+        """)
+
+with col2:
+    st.image('pictures/project_migros.jpg')
+    st.markdown("""
+        #### Migros Store Challenge  
+        **Objective:**  Identify the most promising location for new Migros store in Zürich.
+        
+        **Key Deliverables:**  
+        - Interactive location recommender tool incorporating key performance indicators (KPIs). 
+        - Weighted linear model allowing users to customize KPI importance.
+        - Data-driven recommendations for specific Kreis locations.
+        """)
+    st.markdown('##')
+    st.image('pictures/project_green_energy.jpg')
+    st.markdown("""
+        #### Clean Energy Sources in Switzerland  
+        **Objective:**  Analyze Switzerland's renewable power plant data to identify the canton with the highest concentration of clean energy sources.
+        
+        **Key Deliverables:**  
+        - Bar chart and interactive map displaying clean energy sources per canton.  
+        - Streamlit app for interactive data exploration and insights.
+        """)
+
 # Sidebar
 
 # Contact me
@@ -119,7 +176,7 @@ st.sidebar.markdown(
     """ 
     📧 elinavigand@gmail.com \n
     ☎️ +41 78 740 0536 \n
-    🚀 linkedin.com/in/elinavigand
+    🚀 [linkedin.com/in/elinavigand](https://www.linkedin.com/in/elinavigand/)
     """
     )
 
@@ -180,36 +237,48 @@ OPENAI_API_KEY = ""
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 context = """
-Hallo! 👋 Ich bin Robert, ein Neuntklässler an der Schule Oberägeri mit einer Leidenschaft für App-Entwicklung 📱.
+Hi there! I'm Elina, a data analyst with a passion for uncovering insights from data and a recent graduate of the Constructor Academy Data Science Bootcamp.
 
-Hier ist ein kurzer Überblick über mich:
+Here's a quick snapshot of my background:
 
-* **Fähigkeiten & Interessen:**
-    * Angestrebter App-Entwickler (ab August Praktikum bei Lonza AG!)
-    * Geniesse Volleyball 🏐, Gitarre spielen 🎸, Anime, Manga und alles Japanische 🇯🇵
-    * Fliessend in Englisch 🇬🇧, Deutsch 🇩🇪 und Schweizerdeutsch 🇨🇭 (lerne auch Französisch 🇫🇷!)
-* **Akademische Leistungen:**
-    * Gute Noten in Mathematik (Durchschnitt 4.5), Informatik (Durchschnitt 5.5+), und Englisch, Deutsch und Wissenschaft (Durchschnitt 5+)
-    * Hohe Punktzahlen im Multicheck-Test (95% berufsspezifische Fähigkeiten, 88% Potenzial, 77% Schulwissen)
-* **Erfahrung:**
-    * Schnupperlehren in der App-Entwicklung bei mehreren Unternehmen (Lonza AG, Landis + Gyr AG, Roche AG, Business Systems Integration AG, Exanic AG) abgeschlossen
-    * Plattformentwicklung bei Roche AG erkundet
-* **Gemeinschaftliches Engagement:**
-    * Aktiver Freiwilliger im Jugendzentrum in Ägeri, organisiere Veranstaltungen, helfe mit und vernetze mich mit Menschen 🤝
-* **Kenntnisse & Erfahrungen:**
-    * Programmiersprachen: Ich bin ziemlich gut in Python und kenne mich mit HTML und ein bisschen SQL aus.
-    * Praktikum bei Lonza AG: Ich will so viel wie möglich lernen und dem Unternehmen helfen. Ich möchte schnell Programmierkenntnisse erwerben, um für das Team nützlich zu sein.
-    * Schnupperlehre: Ich habe die Grundlagen von Python, SQL und HTML gelernt, was mir eine gute Grundlage gab.
-    * Zukünftige Projekte: Ich bin mir noch nicht sicher, aber ich bin gespannt, an welchen Projekten ich in Zukunft arbeiten kann.
-* **Interessen & Hobbys:**
-    * Anime/Manga: Jujutsu Kaisen und Demon Slayer sind meine Favoriten. Ich mag die Action, die Charaktere und die gesamten Geschichten.
-    * Volleyball & Gitarre: Ich habe mit Volleyball angefangen, nachdem ich den Anime Haikyuu!! gesehen hatte. Es sah nach viel Spaß aus, und das ist es auch! Ich habe angefangen Gitarre zu spielen, weil ich ein Instrument lernen wollte.
-    * Japanische Kultur: Ich weiß noch nicht so viel über die japanische Kultur, aber ich bin daran interessiert, mehr zu erfahren.
-* **Schule & Persönliche Entwicklung:**
-    * Lieblingsfächer: Sport (macht einfach Spaß), Biologie (ist interessant), Geografie (ich mag die Themen) und Informatik (weil ich gerne programmiere und wir unsere Projekte selbst wählen können).
-    * Ziele für die Zukunft: Ich möchte als App-Entwickler bei Lonza AG arbeiten.
-    * Persönliche Eigenschaften: Ich denke, ich bin ein schneller Lerner und nehme gerne neue Herausforderungen an. Ich bin auch ein guter Teamplayer und immer bereit zu helfen.
+Skills & Interests:
+- Data Analysis & Visualization
+- Machine Learning
+- Python
+- SQL
+- Hiking (Rigi & Stanserhorn are my favorites!)
+- Working out (gym)
+- Traveling (some cool places I've visited: Los Roques in Venzuela, Hong Kong, Haiti, Chernobyl, Bogota, Cuba)
+
+Experience:
+- **Data Science Bootcamp**: Completed an intensive program at Constructor Academy, where I gained expertise in Python, SQL, Machine Learning, and Natural Language Processing.
+- **Nestlé Capstone Project**: Collaborated with a team to develop an automated data analysis pipeline for customer reviews, utilizing web scraping and NLP to uncover valuable insights.
+- **Marketing Project Manager & Consultant**: 12+ years of experience leading marketing teams, analyzing data, and developing customer-centric strategies.
+
+Languages:
+- Fluent in Estonian, English, and German
+- Basic level in Spanish and Russian
+
+Education:
+- BA in Product Design, University of Tallinn
+- BA in Business Administration & Marketing, Estonian Business School
+
+Favorite Books:
+- All Harry Potter books
+- All Auris audiobooks by Sebastian Fitzek
+- Shoe Dog by Phil Knight
+- The Graveyard Book by Neil Gaiman
+
+Favorite Bodcasts:
+- Smartless
+- Conan O'Brien needs a friend
+- The Tim Ferriss Show
+- Marketing Against the Grain
+- Deutschland 3000 - 'ne gute Stunde mit Eva Schulz
+
+I'm eager to leverage my skills and experience to tackle new challenges in the field of data science. I'm a fast learner, a team player, and always ready to take on new challenges.
 """
+
 
 # Function to query OpenAI's GPT model
 def query_gpt(question, context):
@@ -231,7 +300,7 @@ if 'chat_history' not in st.session_state:
 
 # Chat UI in the main page
 st.markdown("""
-#### Chat with me 💬
+## Chat with me 💬
 
 Ask questions about my skills, experiences or hobbies.
 
@@ -240,7 +309,7 @@ Ask questions about my skills, experiences or hobbies.
 * **Ask specific questions:**
     * "Which programming languages do you use?"
     * "What do you love about your work?"
-    * "What are you favorite books?"
+    * "What are you favorite books/podcasts?"
 * **Be clear and specific:** This helps me to give relevant answers.
 * **My answers are based on my personal knowledge and experience:** I will do my best to answer all of your questions about me.
 
@@ -278,17 +347,17 @@ st.markdown('###')
 
 # Image Gallery
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.image('pictures/IMG_3068.jpg')
-    st.image('pictures/IMG_9354.jpg')
+    st.image('pictures/ev1.jpg')
+    st.image('pictures/ev4.jpg')
 
 
 with col2:
-    st.image('pictures/IMG_8926.jpg')
-    st.image('pictures/IMG_3407.jpg')
+    st.image('pictures/ev2.jpg')
+    st.image('pictures/ev6.jpg')
 
-# with col3:
-    # st.image('pictures/IMG_9939.jpg')
-    # st.image('pictures/IMG_9781.jpg')
+with col3:
+    st.image('pictures/ev3.jpg')
+    st.image('pictures/ev5.jpg')

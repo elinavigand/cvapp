@@ -1,0 +1,22 @@
+/* Change the sidebar color*/
+[data-testid=stSidebar] {
+    background-image: linear-gradient(#f3e7e9,#e3eeff);
+  }
+  
+  /* Style hyperlinks*/
+  a{
+    color:#000 !important
+  }
+  
+  p{
+    color: #000
+  }
+  
+  /* Style the contact form */
+  
+  /* When moving the mouse over the submit button, add a background color */
+  button:hover {
+    background-color: #f3e7e9;
+    border: #f3e7e9
+  }
+   
