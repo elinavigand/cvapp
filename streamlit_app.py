@@ -143,7 +143,7 @@ with col1:
         
         **Key Deliverables:**  
         - Cluster analysis revealing three distinct customer segments: "Yuppies," "Conservatives," and "Core Base."  
-        - Strategic recommendations for each segment, including credit limit adjustments, cross-selling, and personalized marketing.
+        - [Strategic recommendations](https://github.com/elinavigand/customer-segmentation-bankA) for each segment, including credit limit adjustments, cross-selling, and personalized marketing.
         """)
 
 with col2:
@@ -155,7 +155,7 @@ with col2:
         **Key Deliverables:**  
         - Interactive location recommender tool incorporating key performance indicators (KPIs). 
         - Weighted linear model allowing users to customize KPI importance.
-        - Data-driven recommendations for specific Kreis locations.
+        - [Data-driven recommendations](https://migroschallenge.streamlit.app/) for specific Kreis locations.
         """)
     st.markdown('##')
     st.image('pictures/project_green_energy.jpg')
@@ -165,7 +165,7 @@ with col2:
         
         **Key Deliverables:**  
         - Bar chart and interactive map displaying clean energy sources per canton.  
-        - Streamlit app for interactive data exploration and insights.
+        - [Streamlit app](https://clean-energy-switzerland.streamlit.app/) for interactive data exploration and insights.
         """)
 
 # Sidebar
