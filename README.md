@@ -1,72 +1,76 @@
-# Project Name
+# Elina Vigand's Streamlit Portfolio
 
-example image:
+Welcome to my Streamlit portfolio application! This app provides an interactive overview of my professional background, skills, projects, and interests.
 
+## Features
 
-![alternative text](reports/img/pic01.jpg)
+### Contact Information
+- Email: elinavigand@gmail.com
+- Phone: +41 78 740 0536
+- LinkedIn: [linkedin.com/in/elinavigand](https://www.linkedin.com/in/elinavigand)
 
+### Education
+- **Data Science Intensive Course**, Constructor Academy, Switzerland
+- **BA in Product Design**, University of Tallinn, Estonia
+- **BA in Business Administration and Marketing**, Estonian Business School, Estonia
 
-#### -- Project Status: [Active, On-Hold, Completed]
+### Skills
+- Data Analysis
+- Data Science
+- Project Management
+- Marketing
+- Programming: Python, SQL
 
-## Project Intro/Objective
-The purpose of this project is ________. (Describe the main goals of the project. Limit to a short paragraph, 3-6 Sentences)
+### Languages
+- English
+- German
+- Estonian
 
-### Partner
-* [Name of Partner organization/Government department etc..]
-* Website for partner
-* Partner contact: [Name of Contact]
-* If you do not have a partner leave this section out
+### Introduction
+- Name: Elina Vigand
+- Title: Data Science | Marketing Analytics | Project Management
+- Summary: Marketing and Customer Analytics Project Manager with 10+ years of experience in B2B SaaS marketing. Passionate about harnessing the power of data to drive strategic marketing decisions and enhance customer experiences.
 
-### Methods Used
-* Inferential Statistics
-* Machine Learning
-* Data Visualization
-* Predictive Modeling
-* etc.
+### Professional Experience
+1. **Data Scientist Consultant**
+   - Company: Nestlé
+   - Duration: February 2024 - April 2024
+2. **Marketing Project Manager**
+   - Company: 3DE Disain GmbH
+   - Duration: July 2011 - December 2023
+3. **Marketing Consultant**
+   - Company: Fujitsu Estonia AG
+   - Duration: October 2014 - October 2021
 
-### Technologies
-* R
-* Python
-* D3
-* PostGres, MySql
-* Pandas, jupyter
-* HTML
-* JavaScript
-* etc.
+### Projects
+- **Unveiling Customer Thoughts**
+  - Objective: Automate customer review analysis for Nestlé’s product, generating deeper insights.
+  - Key Deliverables:
+    - Data pipeline for efficient review collection and analysis.
+    - NLP-powered insights: sentiment, pro/con identification, topic modeling.
+    - Interactive Streamlit app for exploring trends, topics, and asking questions of a ChatGPT-powered assistant.
+- **Migros Store Challenge**
+  - Objective: Identify the most promising location for a new Migros store in Zürich.
+  - Key Deliverables:
+    - Interactive location recommender tool incorporating key performance indicators (KPIs).
+    - Weighted linear model allowing users to customize KPI importance.
+    - Data-driven recommendations for specific Kreis locations.
+- **Customer Segmentation for Bank A**
+  - Objective: Identify optimal customer segments based on purchasing behaviors for targeted marketing campaigns.
+  - Key Deliverables:
+    - Cluster analysis revealing three distinct customer segments: "Yuppies," "Conservatives," and "Core Base."
+    - Strategic recommendations for each segment, including credit limit adjustments, cross-selling, and personalized marketing.
+- **Clean Energy Sources in Switzerland**
+  - Objective: Analyze Switzerland's renewable power plant data to identify the canton with the highest concentration of clean energy sources.
+  - Key Deliverables:
+    - Bar chart and interactive map displaying clean energy sources per canton.
+    - Streamlit app for interactive data exploration and insights.
 
-## Project Description
-(Provide more detailed overview of the project.
-Talk a bit about your data sources and what questions and hypothesis you are exploring.
-What specific data analysis/visualization and modelling work are you using to solve the
-problem? What blockers and challenges are you facing?
-Feel free to number or bullet point things here)
+### Ask questions about me 
+The app allows users to ask questions about my skills, experiences, or hobbies with the help of ChatGPT. To get the best answers:
+- Ask specific questions (e.g., "Which programming languages do you use?", "What do you love about your work?", "What are your favorite books/podcasts?")
+- Be clear and specific to help me provide relevant answers.
+- My answers are based on my personal knowledge and experience.
 
-## Getting Started
-
-1. Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
-2. Raw Data is being kept [here](Repo folder containing raw data) within this repo.
-
-    *If using offline data mention that and how they may obtain the data from the froup)*
-
-3. Data processing/transformation scripts are being kept [here](Repo folder containing data processing scripts/notebooks)
-4. etc...
-
-*If your project is well underway and setup is fairly complicated (ie. requires installation of many packages)
-create another "setup.md" file and link to it here*
-
-5. Follow setup [instructions](Link to file)
-
-## Featured Notebooks/Analysis/Deliverables
-* [Notebook/Markdown/Slide Deck Title](link)
-* [Notebook/Markdown/Slide DeckTitle](link)
-* [Blog Post](link)
-
-
-## Contributing Members
-
-**Team Leads (Contacts) : [Full Name](https://github.com/[github handle])**
-
-#### Other Members:
-
- - [Full Name](https://github.com/[github handle])
- - [Full Name](https://github.com/[github handle])
+## Demo the App
+You can demo the app [here](https://elinavigand.streamlit.app/)
