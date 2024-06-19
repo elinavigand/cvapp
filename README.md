@@ -4,6 +4,11 @@ Welcome to my Streamlit portfolio application! This app provides an interactive 
 
 ## Features
 
+### Introduction
+- Name: Elina Vigand
+- Title: Data Science | Marketing Analytics | Project Management
+- Summary: Marketing and Customer Analytics Project Manager with 10+ years of experience in B2B SaaS marketing. Passionate about harnessing the power of data to drive strategic marketing decisions and enhance customer experiences.
+
 ### Contact Information
 - Email: elinavigand@gmail.com
 - Phone: +41 78 740 0536
@@ -25,11 +30,6 @@ Welcome to my Streamlit portfolio application! This app provides an interactive 
 - English
 - German
 - Estonian
-
-### Introduction
-- Name: Elina Vigand
-- Title: Data Science | Marketing Analytics | Project Management
-- Summary: Marketing and Customer Analytics Project Manager with 10+ years of experience in B2B SaaS marketing. Passionate about harnessing the power of data to drive strategic marketing decisions and enhance customer experiences.
 
 ### Professional Experience
 1. **Data Scientist Consultant**
